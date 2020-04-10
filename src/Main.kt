@@ -1,5 +1,4 @@
 fun main() {
-
     println("=======================================")
     println("GAME SUIT TERMINAL VERSION")
     println("=======================================")
@@ -9,31 +8,15 @@ fun main() {
 
     println("=======================================")
     println("Hasil:")
-    if(pemain1.pilihan == "BATU" && pemain2.pilihan == "GUNTING") {
+    if (
+        (pemain1.pilihan == "BATU" && pemain2.pilihan == "GUNTING") ||
+        (pemain1.pilihan == "KERTAS" && pemain2.pilihan == "BATU") ||
+        (pemain1.pilihan == "GUNTING" && pemain2.pilihan == "KERTAS")
+    ) {
         println("${pemain1.nama} sebagai ${pemain1.text} MENANG!")
-    }
-
-    if(pemain1.pilihan == "KERTAS" && pemain2.pilihan == "BATU") {
-        println("${pemain1.nama} sebagai ${pemain1.text} MENANG!")
-    }
-
-    if(pemain1.pilihan == "GUNTING" && pemain2.pilihan == "KERTAS") {
-        println("${pemain1.nama} sebagai ${pemain1.text} MENANG!")
-    }
-
-    if(pemain1.pilihan == pemain2.pilihan) {
+    } else if (pemain1.pilihan == pemain2.pilihan) {
         println("Permainan Draw!")
-    }
-
-    if(pemain2.pilihan == "BATU" && pemain1.pilihan == "GUNTING") {
-        println("${pemain2.nama} sebagai ${pemain2.text} MENANG!")
-    }
-
-    if(pemain2.pilihan == "KERTAS" && pemain1.pilihan == "BATU") {
-        println("${pemain2.nama} sebagai ${pemain2.text} MENANG!")
-    }
-
-    if(pemain2.pilihan == "GUNTING" && pemain1.pilihan == "KERTAS") {
+    } else {
         println("${pemain2.nama} sebagai ${pemain2.text} MENANG!")
     }
 }
